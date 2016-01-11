@@ -39,10 +39,10 @@ class Generator
      */
     public function generate(string $className, array $context = []) : array
     {
-        $reflectionClass = new \ReflectionClass($className);
-
-        $schema['title'] = $context['title'] ?? $reflectionClass->getShortName();
-        $schema['type'] = 'object';
+        $schema = [
+            'title' => $context['title'] ?? (new \ReflectionClass($className))->getShortName(),
+            'type' => 'object',
+        ];
 
         $phpProperties = $this->propertyInfoExtractor->getProperties($className, $context['property_info_context'] ?? []);
 
@@ -55,7 +55,9 @@ class Generator
         foreach ($phpProperties as $propertyName) {
             $propertyInfoContext = $context['property_info_context'] ?? [];
 
-            if (!$this->propertyInfoExtractor->isWritable($className, $propertyName, $propertyInfoContext)) {
+            $writable = $this->propertyInfoExtractor->isWritable($className, $propertyName, $propertyInfoContext);
+
+            if (null === $writable || false === $writable) {
                 continue;
             }
 
