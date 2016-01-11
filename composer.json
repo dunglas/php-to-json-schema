@@ -1,0 +1,31 @@
+{
+  "name": "dunglas/php-to-json-schema",
+  "type": "library",
+  "description": "Generate a JSON schema from a PHP entity",
+  "keywords": ["php", "json schema", "json", "entity", "validation"],
+  "homepage": "https://dunglas.fr",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kévin Dunglas",
+      "email": "dunglas@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "symfony/property-info": "~2.8|~3.0"
+  },
+  "require-dev": {
+    "phpdocumentor/reflection": "^1.0.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Dunglas\\PhpToJsonSchema\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Dunglas\\PhpToJsonSchema\\Tests\\": "tests/"
+    }
+  }
+}
