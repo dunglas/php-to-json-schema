@@ -43,7 +43,19 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
 
     public function testGenerate()
     {
-        echo json_encode($this->generator->generate(Dummy::class), JSON_PRETTY_PRINT);
-        die;
+        $expected = [
+            'title' => 'Dummy',
+            'type' => 'object',
+            'properties' => [
+                    'baz' => [
+                            'type' => 'float',
+                        ],
+                ],
+            'required' => [
+                    0 => 'baz',
+                ],
+        ];
+
+        $this->assertSame($expected, $this->generator->generate(Dummy::class));
     }
 }
