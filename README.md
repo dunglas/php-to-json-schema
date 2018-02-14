@@ -44,7 +44,7 @@ class MyClass
 $reflectionExtractor = new ReflectionExtractor();
 $propertyInfoExtractor = new PropertyInfoExtractor([$reflectionExtractor], [$reflectionExtractor], [], [$reflectionExtractor]);
 
-$this->generator = new Generator($propertyInfoExtractor);
+$generator = new Generator($propertyInfoExtractor);
 echo json_encode($generator->generate(MyClass::class));
 ```
 
