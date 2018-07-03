@@ -5,13 +5,5 @@ cache:
     - "$HOME/.composer/cache"
 
 php:
-  - 7
-
-before_install:
-   - composer self-update
-
-install:
-   - composer install
-
-script:
-   - phpunit
+  - 7.1
+  - 7.2
