@@ -13,10 +13,10 @@
   ],
   "require": {
     "php": ">=7.0",
-    "symfony/property-info": "~2.8|~3.0"
+    "symfony/property-info": "^2.8 || ^3.0 || ^4.0"
   },
   "require-dev": {
-    "phpdocumentor/reflection": "^1.0.7"
+    "phpdocumentor/reflection-docblock": "^3.0 || ^4.0"
   },
   "autoload": {
     "psr-4": {
