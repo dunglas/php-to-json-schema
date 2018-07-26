@@ -56,8 +56,9 @@ class Generator
             $propertyInfoContext = $context['property_info_context'] ?? [];
 
             $writable = $this->propertyInfoExtractor->isWritable($className, $propertyName, $propertyInfoContext);
+            $readable = $this->propertyInfoExtractor->isReadable($className, $propertyName, $propertyInfoContext);
 
-            if (null === $writable || false === $writable) {
+            if ((null === $writable || false === $writable) && (null === $readable || false === $readable)) {
                 continue;
             }
 
