@@ -1,5 +1,7 @@
 # PHP to JSON Schema
 
+**This library is deprecated, use [API Platform JSON Schema](https://api-platform.com/docs/core/json-schema/) instead.** 
+
 Creates a JSON Schema from a PHP entity. Useful to ensure that a given JSON document will
 be deserialized properly in an object graph.
 
